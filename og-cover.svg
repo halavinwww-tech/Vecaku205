@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b2820"/>
+      <stop offset="1" stop-color="#1c1a15"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c8a56b"/><stop offset="1" stop-color="#a8834a"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- faint pine silhouettes, right side -->
+  <g fill="#ffffff" fill-opacity="0.045">
+    <path d="M980 480 l30 -90 l-18 6 l24 -70 l-14 5 l22 -62 l6 0 l22 62 l-14 -5 l24 70 l-18 -6 l30 90 z"/>
+    <path d="M1080 480 l26 -78 l-15 5 l21 -60 l-12 4 l19 -54 l5 0 l19 54 l-12 -4 l21 60 l-15 -5 l26 78 z"/>
+    <path d="M1150 500 l22 -66 l-13 4 l18 -50 l-10 3 l16 -46 l4 0 l16 46 l-10 -3 l18 50 l-13 -4 l22 66 z"/>
+  </g>
+
+  <!-- content -->
+  <text x="80" y="160" font-family="Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="5" fill="#c8a56b">INVESTĪCIJU IESPĒJA · VECĀĶI, RĪGA</text>
+  <text x="76" y="270" font-family="Georgia, 'Times New Roman', serif" font-size="88" font-weight="600" fill="#faf7f2">Vecāķu prospekts 205</text>
+  <text x="80" y="336" font-family="Helvetica Neue, Arial, sans-serif" font-size="32" font-weight="400" fill="#d9d2c4">4 korpusi · 32 dzīvokļi · 300 m no jūras</text>
+
+  <rect x="80" y="372" width="150" height="6" rx="3" fill="url(#acc)"/>
+
+  <text x="80" y="440" font-family="Helvetica Neue, Arial, sans-serif" font-size="27" font-weight="600" fill="#faf7f2">€6.98M CAPEX</text>
+  <text x="80" y="476" font-family="Helvetica Neue, Arial, sans-serif" font-size="19" font-weight="400" fill="#a89f8e">kopējais investīciju budžets</text>
+
+  <text x="340" y="440" font-family="Helvetica Neue, Arial, sans-serif" font-size="27" font-weight="600" fill="#faf7f2">16.7% Cap Rate</text>
+  <text x="340" y="476" font-family="Helvetica Neue, Arial, sans-serif" font-size="19" font-weight="400" fill="#a89f8e">ienesīgums</text>
+
+  <text x="600" y="440" font-family="Helvetica Neue, Arial, sans-serif" font-size="27" font-weight="600" fill="#faf7f2">6 gadi</text>
+  <text x="600" y="476" font-family="Helvetica Neue, Arial, sans-serif" font-size="19" font-weight="400" fill="#a89f8e">atmaksāšanās</text>
+</svg>
