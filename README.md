@@ -79,8 +79,8 @@ Settings → Pages → Source `main`/`root`, Custom domain `vecaku205.lv`, Enfor
 ## Kas vēl jāaizpilda
 - **Pieteikuma forma** — `<form action="https://formspree.io/f/your-id">` → ieliec īsto
   Formspree ID (vai pieslēdz citu servisu). Kamēr `your-id`, forma tikai parāda paziņojumu, nesūta.
-- **Reģistrācijas numurs** — privātuma politikā un JSON-LD `Organization` pašlaik ir
-  "SIA \"Vecāķu 205\"" bez reģ. Nr. (precizējams). Kad zināms, atjauno abviet.
+- **Reģistrācijas numurs** SIA "Vecāķu 205" — 40103802878 (ierakstīts privātuma politikā,
+  JSON-LD `Organization.identifier` un `llms.txt`).
 - **Finanšu dati** — `index.html` sadaļā `#finance`/`#invest` skaitļi (CAPEX €6.98M, NOI €1.16M,
   Cap Rate 16.7%, atmaksāšanās 6 g., finansēšanas scenāriji A/B) ir no biznesa plāna
   (skat. Avoti). Pārbaudi/precizē pirms nosūtīšanas investoram.
