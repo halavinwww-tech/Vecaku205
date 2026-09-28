@@ -298,6 +298,10 @@ form{background:rgba(255,255,255,.06);backdrop-filter:blur(6px);border:1px solid
 .field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.4)}
 form .btn-primary{width:100%;justify-content:center;border:none}
 .form-note{font-size:.74rem;color:rgba(255,255,255,.5);margin-top:14px;text-align:center}
+.form-status{margin-top:14px;text-align:center;font-size:.9rem;color:rgba(255,255,255,.75);min-height:1.3em}
+.form-status.ok{color:#9fd8a8}
+.form-status.err{color:#f0a3a3}
+form .btn-primary:disabled{opacity:.6;cursor:wait}
 
 /* FOOTER */
 footer{background:var(--ink);color:rgba(255,255,255,.6);padding:50px 0 40px;font-size:.85rem}
@@ -357,7 +361,7 @@ footer a:hover{color:var(--sand)}
   <div class="hero-inner">
     <div class="eyebrow" data-i18n="hero.eyebrow">Investīciju iespēja · Vecāķi, Rīga</div>
     <h1 data-i18n="hero.title">Gatavs attīstības projekts 300 m no jūras</h1>
-    <p class="lead" data-i18n="hero.lead">4842 m² zemes ar izstrādātu tehnisko projektu daudzstāvu apbūvei Vecāķu priežu silā. Iespēja vienam investoram vai attīstītājam — zeme, tehniskais projekts un potenciāls vienā darījumā.</p>
+    <p class="lead" data-i18n="hero.lead">4842 m² zemes ar izstrādātu tehnisko projektu mazstāvu apbūvei Vecāķu priežu silā. Iespēja vienam investoram vai attīstītājam — zeme, tehniskais projekts un potenciāls vienā darījumā.</p>
     <div class="cta-row">
       <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1">Pieprasīt investīciju memorandu</a>
       <a href="#opportunity" class="btn btn-ghost" data-i18n="hero.cta2">Iepazīt projektu</a>
@@ -408,12 +412,12 @@ footer a:hover{color:var(--sand)}
     <div class="section-head reveal">
       <div class="eyebrow" data-i18n="opp.eyebrow">Investīciju iespēja</div>
       <h2 data-i18n="opp.title">Ekskluzīva investīciju iespēja Vecāķos</h2>
-      <p data-i18n="opp.text">Reta iespēja iegādāties zemi Vecāķos jūras tuvumā ar izstrādātu daudzstāvu apbūves tehnisko projektu. Ierobežots piedāvājums — gatavos dzīvokļus var gan pārdot, gan izīrēt, un projektu īstenot vairākās kārtās.</p>
+      <p data-i18n="opp.text">Reta iespēja iegādāties zemi Vecāķos jūras tuvumā ar izstrādātu mazstāvu apbūves tehnisko projektu. Ierobežots piedāvājums — gatavos dzīvokļus var gan pārdot, gan izīrēt, un projektu īstenot vairākās kārtās.</p>
     </div>
     <div class="opp-grid">
       <div class="opp reveal">
         <svg class="oic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 21V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v16"/><path d="M14 9h3a1 1 0 0 1 1 1v11"/><path d="M9 8h1M9 12h1M9 16h1"/></svg>
-        <div><h3 data-i18n="opp.h1">Ekskluzīva zeme pie jūras</h3><p data-i18n="opp.p1">Reta iespēja iegādāties zemi Vecāķos jūras tuvumā ar daudzstāvu dzīvojamās apbūves potenciālu.</p></div>
+        <div><h3 data-i18n="opp.h1">Ekskluzīva zeme pie jūras</h3><p data-i18n="opp.p1">Reta iespēja iegādāties zemi Vecāķos jūras tuvumā ar mazstāvu dzīvojamās apbūves potenciālu.</p></div>
       </div>
       <div class="opp reveal">
         <svg class="oic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 9v11"/></svg>
@@ -572,13 +576,16 @@ footer a:hover{color:var(--sand)}
         </ul>
       </div>
       <div class="reveal">
-        <form id="leadForm" action="https://formspree.io/f/your-id" method="POST">
+        <form id="leadForm" action="https://formspree.io/f/mqpagorl" method="POST">
+          <input type="hidden" name="_subject" value="Vecāķu prospekts 205 — investīciju memoranda pieprasījums" />
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0;width:0" aria-hidden="true" />
           <div class="field"><label data-i18n="con.name">Vārds, uzvārds</label><input type="text" name="name" required placeholder="—" /></div>
           <div class="field"><label data-i18n="con.email">E-pasts</label><input type="email" name="email" required placeholder="—" /></div>
           <div class="field"><label data-i18n="con.phone">Tālrunis</label><input type="tel" name="phone" placeholder="—" /></div>
           <div class="field"><label data-i18n="con.msg">Ziņa</label><textarea name="message" rows="3" placeholder="—"></textarea></div>
           <button type="submit" class="btn btn-primary" data-i18n="con.submit">Pieprasīt memorandu</button>
           <div class="form-note" data-i18n="con.note">Nospiežot pogu, jūs piekrītat datu apstrādei saziņai.</div>
+          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
         </form>
       </div>
     </div>
@@ -606,7 +613,7 @@ const I18N = {
   lv:{
     "nav.opportunity":"Iespēja","nav.finance":"Finanses","nav.location":"Atrašanās vieta","nav.numbers":"Skaitļos","nav.contact":"Kontakti",
     "hero.eyebrow":"Investīciju iespēja · Vecāķi, Rīga","hero.title":"Gatavs attīstības projekts 300 m no jūras",
-    "hero.lead":"4842 m² zemes ar izstrādātu tehnisko projektu daudzstāvu apbūvei Vecāķu priežu silā. Iespēja vienam investoram vai attīstītājam — zeme, tehniskais projekts un potenciāls vienā darījumā.",
+    "hero.lead":"4842 m² zemes ar izstrādātu tehnisko projektu mazstāvu apbūvei Vecāķu priežu silā. Iespēja vienam investoram vai attīstītājam — zeme, tehniskais projekts un potenciāls vienā darījumā.",
     "hero.cta1":"Pieprasīt investīciju memorandu","hero.cta2":"Iepazīt projektu","hero.scroll":"Ritiniet",
     "fin.eyebrow":"Investīciju atdeve","fin.title":"Skaitļi runā paši par sevi",
     "fin.text":"Aprēķins balstīts uz «pilnībā gatavu» dzīvokļu modeli ar nodošanu vienotai pārvaldības sabiedrībai ilgtermiņa un sezonālai īrei.",
@@ -616,8 +623,8 @@ const I18N = {
     "fin.revTitle":"Gada ieņēmumi",
     "fin.r1":"Dzīvokļu īre (32 vienības)","fin.r2":"Stāvvietu īre (40 vietas)","fin.r3":"Bruto ienākums (85% noslogojums)","fin.r4":"Operatīvie izdevumi (17%)","fin.rtotal":"Tīrais ienākums (NOI)",
     "opp.eyebrow":"Investīciju iespēja","opp.title":"Ekskluzīva investīciju iespēja Vecāķos",
-    "opp.text":"Reta iespēja iegādāties zemi Vecāķos jūras tuvumā ar izstrādātu daudzstāvu apbūves tehnisko projektu. Ierobežots piedāvājums — gatavos dzīvokļus var gan pārdot, gan izīrēt, un projektu īstenot vairākās kārtās.",
-    "opp.h1":"Ekskluzīva zeme pie jūras","opp.p1":"Reta iespēja iegādāties zemi Vecāķos jūras tuvumā ar daudzstāvu dzīvojamās apbūves potenciālu.",
+    "opp.text":"Reta iespēja iegādāties zemi Vecāķos jūras tuvumā ar izstrādātu mazstāvu apbūves tehnisko projektu. Ierobežots piedāvājums — gatavos dzīvokļus var gan pārdot, gan izīrēt, un projektu īstenot vairākās kārtās.",
+    "opp.h1":"Ekskluzīva zeme pie jūras","opp.p1":"Reta iespēja iegādāties zemi Vecāķos jūras tuvumā ar mazstāvu dzīvojamās apbūves potenciālu.",
     "opp.h2":"Izstrādāts tehniskais projekts","opp.p2":"Gatavs tehniskais projekts (birojs BRM) — mazāk riska un ātrāks ceļš līdz būvniecībai.",
     "opp.h3":"Pārdot vai izīrēt","opp.p3":"Ierobežots piedāvājums, kas ļauj gatavos dzīvokļus gan pārdot, gan izīrēt — elastīga atdeve.",
     "opp.h4":"Realizācija vairākās kārtās","opp.p4":"Projektu iespējams īstenot un finansēt pa kārtām, sadalot kapitālu un risku laikā.",
@@ -657,7 +664,7 @@ const I18N = {
   en:{
     "nav.opportunity":"Opportunity","nav.finance":"Finance","nav.location":"Location","nav.numbers":"In numbers","nav.contact":"Contact",
     "hero.eyebrow":"Investment opportunity · Vecāķi, Riga","hero.title":"A ready-to-build development project, 300 m from the sea",
-    "hero.lead":"4842 m² of land with a developed technical design for multi-storey housing in the Vecāķi pine forest. An opportunity for a single investor or developer — land, technical design and upside in one deal.",
+    "hero.lead":"4842 m² of land with a developed technical design for low-rise housing in the Vecāķi pine forest. An opportunity for a single investor or developer — land, technical design and upside in one deal.",
     "hero.cta1":"Request investment memorandum","hero.cta2":"Explore the project","hero.scroll":"Scroll",
     "fin.eyebrow":"Investment returns","fin.title":"The numbers speak for themselves",
     "fin.text":"The model is based on turnkey, fully-furnished apartments handed to a single management company for long-term and seasonal rental.",
@@ -667,8 +674,8 @@ const I18N = {
     "fin.revTitle":"Annual revenue",
     "fin.r1":"Apartment rental (32 units)","fin.r2":"Parking rental (40 spaces)","fin.r3":"Gross income (85% occupancy)","fin.r4":"Operating expenses (17%)","fin.rtotal":"Net operating income (NOI)",
     "opp.eyebrow":"Investment opportunity","opp.title":"An exclusive investment opportunity in Vecāķi",
-    "opp.text":"A rare chance to acquire land in Vecāķi near the sea with a developed technical design for multi-storey housing. A limited offer — finished apartments can be sold or rented, and the project delivered in several stages.",
-    "opp.h1":"Exclusive seaside land","opp.p1":"A rare chance to acquire land in Vecāķi near the sea with multi-storey residential development potential.",
+    "opp.text":"A rare chance to acquire land in Vecāķi near the sea with a developed technical design for low-rise housing. A limited offer — finished apartments can be sold or rented, and the project delivered in several stages.",
+    "opp.h1":"Exclusive seaside land","opp.p1":"A rare chance to acquire land in Vecāķi near the sea with low-rise residential development potential.",
     "opp.h2":"Developed technical design","opp.p2":"A ready technical project (BRM) — less risk and a faster path to construction.",
     "opp.h3":"Sell or rent","opp.p3":"A limited offer that lets finished apartments be sold or rented — flexible returns.",
     "opp.h4":"Delivery in several stages","opp.p4":"The project can be built and financed in phases, spreading capital and risk over time.",
@@ -708,7 +715,7 @@ const I18N = {
   ru:{
     "nav.opportunity":"Возможность","nav.finance":"Финансы","nav.location":"Расположение","nav.numbers":"В цифрах","nav.contact":"Контакты",
     "hero.eyebrow":"Инвестиционная возможность · Вецаки, Рига","hero.title":"Готовый девелоперский проект в 300 м от моря",
-    "hero.lead":"4842 м² земли с разработанным техническим проектом многоэтажной застройки в сосновом бору Вецаки. Возможность для одного инвестора или девелопера — земля, технический проект и потенциал в одной сделке.",
+    "hero.lead":"4842 м² земли с разработанным техническим проектом малоэтажной застройки в сосновом бору Вецаки. Возможность для одного инвестора или девелопера — земля, технический проект и потенциал в одной сделке.",
     "hero.cta1":"Запросить инвестиционный меморандум","hero.cta2":"Изучить проект","hero.scroll":"Листайте",
     "fin.eyebrow":"Доходность инвестиций","fin.title":"Цифры говорят сами за себя",
     "fin.text":"Расчёт основан на модели «под ключ» с передачей квартир единой управляющей компании для долгосрочной и сезонной аренды.",
@@ -718,8 +725,8 @@ const I18N = {
     "fin.revTitle":"Годовой доход",
     "fin.r1":"Аренда квартир (32 юнита)","fin.r2":"Аренда парковки (40 мест)","fin.r3":"Валовый доход (загрузка 85%)","fin.r4":"Операционные расходы (17%)","fin.rtotal":"Чистый операционный доход (NOI)",
     "opp.eyebrow":"Инвестиционная возможность","opp.title":"Эксклюзивная инвестиционная возможность в Вецаки",
-    "opp.text":"Редкая возможность приобрести землю в Вецаки рядом с морем с разработанным техническим проектом многоэтажной застройки. Ограниченное предложение — готовые квартиры можно продавать или сдавать в аренду, а проект реализовать в несколько очередей.",
-    "opp.h1":"Эксклюзивная земля у моря","opp.p1":"Редкая возможность приобрести землю в Вецаки рядом с морем с потенциалом многоэтажной жилой застройки.",
+    "opp.text":"Редкая возможность приобрести землю в Вецаки рядом с морем с разработанным техническим проектом малоэтажной застройки. Ограниченное предложение — готовые квартиры можно продавать или сдавать в аренду, а проект реализовать в несколько очередей.",
+    "opp.h1":"Эксклюзивная земля у моря","opp.p1":"Редкая возможность приобрести землю в Вецаки рядом с морем с потенциалом малоэтажной жилой застройки.",
     "opp.h2":"Разработанный технический проект","opp.p2":"Готовый технический проект (бюро BRM) — меньше риска и быстрее путь к строительству.",
     "opp.h3":"Продать или сдать в аренду","opp.p3":"Ограниченное предложение позволяет готовые квартиры продавать или сдавать в аренду — гибкая доходность.",
     "opp.h4":"Реализация в несколько очередей","opp.p4":"Проект можно строить и финансировать поэтапно, распределяя капитал и риск во времени.",
@@ -803,13 +810,23 @@ document.getElementById('menuBtn').addEventListener('click',()=>{
   document.getElementById('location').scrollIntoView({behavior:'smooth'});
 });
 
-/* ---------- form (prototype) ---------- */
-document.getElementById('leadForm').addEventListener('submit',function(e){
-  if(this.action.includes('your-id')){
-    e.preventDefault();
-    const msg={lv:'Paldies! Šis ir prototips — pieslēdziet Formspree/e-pastu, lai saņemtu pieteikumus.',en:'Thank you! This is a prototype — connect Formspree/email to receive submissions.',ru:'Спасибо! Это прототип — подключите Formspree/почту для приёма заявок.'};
-    alert(msg[document.documentElement.lang]||msg.lv);
-  }
+/* ---------- contact form (Formspree, AJAX) ---------- */
+const FORM_MSG={
+  lv:{ok:'Paldies! Jūsu pieprasījums ir nosūtīts — drīzumā sazināsimies.',err:'Neizdevās nosūtīt. Lūdzu, mēģiniet vēlreiz vai rakstiet uz info@vecaku205.lv.',sending:'Sūta…'},
+  en:{ok:'Thank you! Your request has been sent — we will be in touch shortly.',err:'Sending failed. Please try again or write to info@vecaku205.lv.',sending:'Sending…'},
+  ru:{ok:'Спасибо! Ваш запрос отправлен — мы скоро свяжемся с вами.',err:'Не удалось отправить. Попробуйте ещё раз или напишите на info@vecaku205.lv.',sending:'Отправка…'}
+};
+document.getElementById('leadForm').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const form=this, status=document.getElementById('formStatus'), btn=form.querySelector('button[type=submit]');
+  const m=FORM_MSG[document.documentElement.lang]||FORM_MSG.lv;
+  status.className='form-status'; status.textContent=m.sending; btn.disabled=true;
+  try{
+    const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+    if(res.ok){ status.className='form-status ok'; status.textContent=m.ok; form.reset(); }
+    else{ status.className='form-status err'; status.textContent=m.err; }
+  }catch(err){ status.className='form-status err'; status.textContent=m.err; }
+  btn.disabled=false;
 });
 </script>
 </body>
