@@ -13,25 +13,25 @@
 - Kopējā apbūve (GBA): 4500 m²
 - Pārdodamā platība: 2800 m² (80/20 pārdodamā/koplietošanas attiecība)
 - Dzīvojamā platība: 3500 m²
-- Dzīvokļi: 32 vienības kopā (8 katrā korpusā), vidējā platība ~87.5 m²
+- Dzīvokļi: 32 vienības kopā (8 katrā korpusā), vidējā platība ~87,5 m²
 - Pazemes stāvvieta: 1000 m², 40 vietas
 
 ## Finanšu rādītāji
 - Kopējais investīciju budžets (CAPEX): 6 980 000 EUR
 - Gada tīrais operatīvais ienākums (NOI): 1 162 000 EUR
-- Ienesīgums (Cap Rate): 16.7%
+- Ienesīgums (Cap Rate): 16,7 %
 - Atmaksāšanās periods: 6 gadi
-- CAPEX sadalījums: zeme un tiesības 600 000 EUR (8.6%), korpusu būvniecība (pilna apdare)
-  5 600 000 EUR (80.2%), pazemes stāvvieta 500 000 EUR (7.2%), projektēšana/atļaujas
-  180 000 EUR (2.6%), vadība un neparedzētie 100 000 EUR (1.4%)
+- CAPEX sadalījums: zeme un tiesības 600 000 EUR (8,6 %), korpusu būvniecība (pilna apdare)
+  5 600 000 EUR (80,2 %), pazemes stāvvieta 500 000 EUR (7,2 %), projektēšana/atļaujas
+  180 000 EUR (2,6 %), vadība un neparedzētie 100 000 EUR (1,4 %)
 - Gada ieņēmumi: dzīvokļu īre (32 vienības, vid. 3200 EUR/mēn.) 1 228 800 EUR, stāvvietu
   īre 33 600 EUR, bruto ienākums (85% noslogojums) 1 400 000 EUR, operatīvie izdevumi
   (17%) −238 000 EUR
 
 ## Investīciju struktūra (2 scenāriji)
-1. Kreditors (Senior Debt): 4 500 000–5 000 000 EUR (LTV ~65–70%), 7.5–9.0% gadā
+1. Aizdevējs (Senior Debt): 4 500 000–5 000 000 EUR (LTV ~65–70 %), 7,5–9,0 % gadā
    (fiksēts), nodrošinājums — 1. ķīla uz zemi un ēkām, termiņš 3–5 gadi vai anuitāte.
-2. Investors (Equity Partner): 6 380 000 EUR (ar zemes ieguldījumu), 15.0–18.0% IRR
+2. Investors (Equity Partner): 6 380 000 EUR (ar zemes ieguldījumu), 15,0–18,0 % IRR
    (peļņas daļa), nodrošinājums — daļa SPV sabiedrībā, izeja — daļas izpirkšana vai
    dividendes.
 
