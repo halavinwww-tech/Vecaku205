@@ -16,7 +16,7 @@ ieņēmumu sadalījums) → Iespēja (4 pārdošanas argumenti) → Atrašanās 
 piktogramma) → Arhitektūra (gatavs tehniskais projekts) → Skaitļos (darījuma dati, 10 rādītāji,
 t.sk. 32 dzīvokļi) → Korpusi A/B/C/D (fāzēta attīstība, 8 dzīvokļi katrā) → **Investīciju
 struktūra** (2 scenāriji: Kreditors / Investors) → **Realizācijas grafiks** (18–24 mēneši) →
-Investīciju memoranda pieprasījums → Kājenē: tiesību piezīme (SIA "Vecāķu 205").
+Investīciju memoranda pieprasījums → Kājenē: tiesību piezīme (SIA „Vecāķu 205“).
 
 ## Struktūra
 ```
@@ -39,7 +39,7 @@ assets/
   Open Graph (og:title/description/image/locale + LV/EN/RU alternates), Twitter Card,
   `geo.region`/`geo.placename`/`geo.position`/`ICBM`.
 - **JSON-LD strukturētie dati** (2 bloki `<script type="application/ld+json">`):
-  `@graph` ar `WebSite` + `Organization` (SIA "Vecāķu 205") + `ApartmentComplex`
+  `@graph` ar `WebSite` + `Organization` (SIA „Vecāķu 205“) + `ApartmentComplex`
   (32 dzīvokļi, koordinātas, adrese); atsevišķs `FAQPage` bloks ar 6 investoru jautājumiem
   (CAPEX, Cap Rate, dzīvokļu skaits, attālums līdz jūrai, investīciju scenāriji, grafiks).
 - **`robots.txt`** — atļauj visiem crawleriem, norāda uz sitemap.
@@ -79,7 +79,7 @@ Settings → Pages → Source `main`/`root`, Custom domain `vecaku205.lv`, Enfor
 ## Kas vēl jāaizpilda
 - **Pieteikuma forma** — `<form action="https://formspree.io/f/your-id">` → ieliec īsto
   Formspree ID (vai pieslēdz citu servisu). Kamēr `your-id`, forma tikai parāda paziņojumu, nesūta.
-- **Reģistrācijas numurs** SIA "Vecāķu 205" — 40103802878 (ierakstīts privātuma politikā,
+- **Reģistrācijas numurs** SIA „Vecāķu 205“ — 40103802878 (ierakstīts privātuma politikā,
   JSON-LD `Organization.identifier` un `llms.txt`).
 - **Finanšu dati** — `index.html` sadaļā `#finance`/`#invest` skaitļi (CAPEX €6.98M, NOI €1.16M,
   Cap Rate 16.7%, atmaksāšanās 6 g., finansēšanas scenāriji A/B) ir no biznesa plāna
